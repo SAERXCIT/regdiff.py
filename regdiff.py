@@ -35,7 +35,7 @@ class RegDiffer():
                 value_b_type, value_b_value = await self.hive_b.get_value(value_b, key = current_key_b)
                 list_of_values_b |= {value_b: [value_b_type, value_b_value]}
             except UnicodeDecodeError:
-                list_of_values_a |= {value_a: [REGTYPE.REG_UNKNOWN, "%ERROR_CANNOT_DECODE_VALUE_A%"]}
+                list_of_values_b |= {value_b: [REGTYPE.REG_UNKNOWN, "%ERROR_CANNOT_DECODE_VALUE_B%"]}
 
         properties_a = set(list_of_values_a.keys())
         properties_b = set(list_of_values_b.keys())
